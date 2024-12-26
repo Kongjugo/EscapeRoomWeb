@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" type="x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH4rrqe1z5iKjGkdCOh7PgXj5AY-jDweHPKw&s">
+    <title>공주고 방탈출</title>
+    <style>
+        @font-face {
+            font-family: 'Freesentation-9Black';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Freesentation-9Black', 'Courier New', Courier, monospace;
+            background-color: #101010; /* Deep black background */
+            color: #FFFFFF; /* White text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: #222;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            border: 2px solid #FFFFFF; /* White border */
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container h1 {
+            margin-bottom: 40px; /* Increased margin to widen space */
+            color: #FFFFFF; /* White heading */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .country-group {
+            margin: 30px 0; /* Increased margin for wider spacing */
+        }
+
+        .country-group label {
+            display: block;
+            font-size: 1.5em;
+            margin-bottom: 20px; /* Increased margin between label and input */
+        }
+
+        /* Unified input and button styles */
+        .answer-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            border: 2px solid #FFFFFF; /* Unified border */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .answer-group input {
+            flex: 1;
+            padding: 15px;
+            font-size: 1.2em;
+            text-align: center;
+            border: none;
+            background-color: #333;
+            color: #FFFFFF;
+            outline: none;
+        }
+
+        .answer-group input:focus {
+            background-color: #444;
+        }
+
+        .answer-group button {
+            padding: 15px 30px; /* Increased button padding */
+            font-size: 1.2em;
+            border: none;
+            background-color: #FFFFFF;
+            color: #000;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .answer-group button:hover {
+            background-color: #ccc;
+        }
+
+        /* Background animation for a hacking feel */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') center center no-repeat;
+            background-size: cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* Home icon styling */
+        .home-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #FFFFFF;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <!-- Home icon as link -->
+    <a href="/" class="home-icon"><i class='bx bx-home'></i></a>
+    
+    <div class="container">
+        <h1>Find A Password</h1>
+        <div class="country-group">
+            <label for="switzerland">스위스</label>
+        </div>
+        <div class="country-group">
+            <label for="usa">미국</label>
+        </div>
+        <div class="country-group">
+            <label for="turkey">터키</label>
+        </div>
+        <!-- Answer input and submit button -->
+        <div class="answer-group">
+            <input type="text" id="answer" placeholder="답안을 입력하세요">
+            <button id="submitAnswer">제출</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitAnswer').addEventListener('click', function() {
+            const answer = document.getElementById('answer').value;
+            if (answer === '836584') {
+                window.location.href = "https://docs.google.com/document/d/1a8ClAp1vFVp-Lztd6Fw1kTd8FTKqjC-NCZCygd1XpTk/edit?usp=sharing"; // Replace with desired URL
+            } else {
+                alert("Incorrect answer. Try again!");
+            }
+        });
+    </script>
+</body>
+</html>

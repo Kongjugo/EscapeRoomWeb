@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH4rrqe1z5iKjGkdCOh7PgXj5AY-jDweHPKw&s">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>공주고 방탈출</title>
+    <style>
+        @font-face {
+            font-family: 'Freesentation-9Black';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Freesentation-9Black', 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #FFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .login-container {
+            background-color: #222;
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 2px solid #FFF;
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container h2 {
+            margin-bottom: 40px;
+            color: #FFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 2.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 15px; /* 텍스트와 입력 필드 간격 */
+            color: #FFF;
+            font-weight: bold;
+            font-size: 1.0rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 16px;
+            padding-left: 15px;
+            border-radius: 4px;
+            border: 1px solid #666;
+            background-color: #333;
+            color: #FFF;
+            font-size: 1.0rem;
+            letter-spacing: 1px;
+            text-transform: none;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: 'Freesentation-9Black', 'Courier New', Courier, monospace;
+        }
+
+        .form-group input:focus {
+            border-color: #FFF;
+            background-color: #222;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #FFF;
+            color: black;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            letter-spacing: 2px;
+            padding: 12px 0;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #ccc;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+        }
+
+        .form-footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .form-footer a {
+            color: #FFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') center center no-repeat;
+            background-size: cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* 홈 아이콘을 좌측 상단에 배치 */
+        .home-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #FFF;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <!-- 홈 아이콘을 좌측 상단에 배치 -->
+    <a href="/" class="home-icon"><i class='bx bx-home'></i></a>
+
+    <div class="login-container">
+        <h2>Find A Student</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">성명</label>
+                <input type="text" id="username" name="username" required placeholder="학생의 이름을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="password">수험번호</label>
+                <input type="text" id="password" name="password" required placeholder="수험번호를 입력하세요">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="로그인">
+            </div>
+        </form>
+        <div class="form-footer">
+            <a href="#" id="forgotPassword">수험번호를 잃어버렸습니까?</a> | <a href="#">수험번호 등록</a>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const validUsername = "이성훈";
+            const validPassword = "61011216";
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = "/quiz";
+            } else {
+                alert("이름 또는 수험번호가 잘못 입력되었습니다");
+            }
+        });
+
+        document.getElementById('forgotPassword').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert("힌트 : 학생 리스트");
+        });
+    </script>
+</body>
+</html>
